@@ -1,17 +1,13 @@
-
 spring:
-  jpa:
-    database: POSTGRESQL
-    show-sql: true
-    hibernate:
-      ddl-auto: update 
- 
   datasource:
-    driverClassName: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/db_TodoMascotas
-    username: postgres
-    password: admin
-    
-    
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/TodoMascotas?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    username: root
+    password: root
+  jpa:
+    database: MYSQL
+    hibernate:
+      ddl-auto: update
+    show-sql: false
 server:
-  port: 8090 
+  port: 8081
