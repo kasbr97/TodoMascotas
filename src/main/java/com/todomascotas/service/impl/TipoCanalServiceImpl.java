@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.todomascotas.entity.TipoCanal;
 import com.todomascotas.repository.TipoCanalRepository;
@@ -13,33 +14,34 @@ import com.todomascotas.service.TipoCanalService;
 public class TipoCanalServiceImpl implements TipoCanalService {
 	@Autowired
 	private TipoCanalRepository tipocanalrepository;
+	@Transactional(readOnly=true)
 	public List<TipoCanal> findAll() throws Exception {
 		// TODO Auto-generated method stub
-		return null;
+		return tipocanalrepository.findAll();
 	}
-
+	@Transactional
 	public TipoCanal save(TipoCanal t) throws Exception {
 		// TODO Auto-generated method stub
-		return null;
+		return tipocanalrepository.save(t);
 	}
-
+	@Transactional
 	public TipoCanal update(TipoCanal t) throws Exception {
 		// TODO Auto-generated method stub
-		return null;
+		return tipocanalrepository.save(t);
 	}
-
+	@Transactional(readOnly=true)
 	public Optional<TipoCanal> findById(Integer id) throws Exception {
 		// TODO Auto-generated method stub
-		return null;
+		return tipocanalrepository.findById(id);
 	}
-
+	@Transactional
 	public void deleteById(Integer id) throws Exception {
-		// TODO Auto-generated method stub
+		tipocanalrepository.deleteById(id);
 		
 	}
-
+	@Transactional
 	public void deleteAll() throws Exception {
-		// TODO Auto-generated method stub
+		tipocanalrepository.deleteAll();
 		
 	}
 
